@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เที่ยวเมืองไทย - Thailand Travel Gallery</title>
+    <style>
+        /* ตั้งค่าฟอนต์และพื้นฐาน */
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* ส่วนหัวของเว็บไซต์ (Header) */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=1920') no-repeat center center/cover;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* กล่องจัดการเนื้อหา (Container) */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* ระบบกริดแสดงรูปภาพ (Gallery Grid) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* การ์ดสถานที่ท่องเที่ยว */
+        .card {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        /* ส่วนรูปภาพในการ์ด */
+        .card-img-box {
+            position: relative;
+            overflow: hidden;
+            padding-top: 66.67%; /* อัตราส่วนภาพ 3:2 */
+        }
+
+        .card-img-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img-box img {
+            transform: scale(1.08);
+        }
+
+        /* ส่วนข้อมูลการ์ด */
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: #1e88e5;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+
+        /* ส่วนท้าย (Footer) */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #2c3e50;
+            color: #fff;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Amazing Thailand</h1>
+        <p>บันทึกความทรงจำและสถานที่ท่องเที่ยวที่น่าประทับใจ</p>
+    </header>
+
+    <div class="container">
+        <div class="gallery-grid">
+
+            <div class="card">
+                <div class="card-img-box">
+                    <img src="https://www.b2hotel.com/wp-content/uploads/2023/01/Bangkok-1024x683.jpg" alt="วัดพระแก้ว">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">กรุงเทพมหานคร</span>
+                    <h3 class="card-title">วัดพระศรีรัตนศาสดาราม</h3>
+                    <p class="card-desc">วัดคู่บ้านคู่เมืองของประเทศไทย หรือที่เรียกกันว่าวัดพระแก้ว ตั้งอยู่ในพระบรมมหาราชวัง</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi2pNGjg7qk3-j7-a-hXkryzwAMYTgSXnv9CRNOah7M5DwOU1ljm9vRDDt&s=10" alt="ทะเลภาคใต้">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">กระบี่</span>
+                    <h3 class="card-title">ทะเลแหวก</h3>
+                    <p class="card-desc">หนึ่งในสิ่งมหัศจรรย์ของเมืองไทย ยามน้ำลดจะปรากฏสันทรายขาวสะอาดเชื่อมเกาะสามเกาะเข้าด้วยกัน</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-box">
+                    <img src="https://villaalanna.com/chiangmai/assets/images/blog/blog_2/cover.jpg" alt="เชียงใหม่">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">เชียงใหม่</span>
+                    <h3 class="card-title">ดอยอินทนนท์</h3>
+                    <p class="card-desc">ยอดเขาที่สูงที่สุดในประเทศไทย จุดชมทะเลหมอกและสัมผัสอากาศหนาวเย็นตลอดทั้งปี</p>
+                </div>
+            </div>
+
+            </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Thailand Travel Gallery. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
